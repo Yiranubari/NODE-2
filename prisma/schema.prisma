@@ -21,6 +21,11 @@ model User {
   password String
 
   createdAt DateTime @default(now())
+
+  // Relations
+  movies Movie[] @relation("MovieCreator")
+  watchlistItems WatchlistItem[]
+
 }
 
 model Movie {
