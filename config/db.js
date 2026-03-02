@@ -18,4 +18,7 @@ const connectDB = async () => {
   }
 };
 
-const disconnectDB = async () => {};
+const disconnectDB = async () => {
+  await prisma.$disconnect();
+  console.log("Disconnected from database");
+};
