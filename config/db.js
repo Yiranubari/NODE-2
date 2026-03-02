@@ -8,6 +8,14 @@ const prisma = new PrismaClient({
       : ["error"],
 });
 
-const connectDB = async () => {};
+const connectDB = async () => {
+  try {
+    await prisma.$connect();
+    console.log("Connected to database");
+  } catch (error) {
+    console.error("Failed to connect to database:", error.message);
+    process.exit(1);
+  }
+};
 
 const disconnectDB = async () => {};
