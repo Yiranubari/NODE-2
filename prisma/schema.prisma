@@ -35,6 +35,13 @@ model Movie {
   createdAt    DateTime @default(now())
 }
 
+enum WatchlistStatus {
+  PLANNED
+  WATCHING
+  COMPLETED
+  DROPPED
+}
+
 model WatchlistItem {
   id        String          @id @default(uuid())
   userId    String
