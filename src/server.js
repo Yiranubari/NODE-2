@@ -1,9 +1,9 @@
-const express = require("express");
-const app = express();
+import express from "express";
 
 // Import Routes
-import movieRoutes from "./routes/movieRoutes.js";
+const app = express();
 
+import movieRoutes from "./routes/movieRoutes.js";
 // API Routes
 app.use("/movies", movieRoutes);
 
