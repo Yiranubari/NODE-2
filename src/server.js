@@ -4,6 +4,8 @@ import { config } from "dotenv";
 // Import Routes (note: routes folder is outside src)
 import movieRoutes from "../routes/movieRoutes.js";
 
+config();
+
 const app = express();
 
 // API Routes
