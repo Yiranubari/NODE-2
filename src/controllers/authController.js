@@ -53,4 +53,4 @@ const login = async (req, res) => {
   }
 };
 
-export { register };
+export { register, login };
