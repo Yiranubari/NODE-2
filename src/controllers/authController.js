@@ -36,7 +36,7 @@ const register = async (req, res) => {
         id: user.id,
         name: name,
         email: email,
-        token: generateToken(user.id),
+        token: generateToken(user.id, res),
       },
     },
   });
@@ -62,7 +62,7 @@ const login = async (req, res) => {
   }
 
   // Generate JWT
-  const token = generateToken(user.id);
+  const token = generateToken(user.id, res);
 
   res.status(200).json({
     status: "success",
