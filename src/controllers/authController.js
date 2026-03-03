@@ -87,4 +87,4 @@ const logout = async (req, res) => {
   });
 };
 
-export { register, login };
+export { register, login, logout };
