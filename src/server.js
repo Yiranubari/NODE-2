@@ -1,6 +1,6 @@
 import express from "express";
 import { config } from "dotenv";
-import { connectDB, disconnectDB } from "../config/db.js";
+import { connectDB, disconnectDB } from "./config/db.js";
 
 // Import Routes
 import movieRoutes from "../routes/movieRoutes.js";
