@@ -1,5 +1,6 @@
 const register = async (req, res) => {
-  res.status(200).json({ message: "Register endpoint" });
+  const body = req.body;
+  res.json(body);
 };
 
 export { register };
