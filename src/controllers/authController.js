@@ -1,4 +1,5 @@
 import { PrismaClient } from "@prisma/client";
+import bcrypt from "bcryptjs";
 const register = async (req, res) => {
   const body = req.body;
   const { name, email, password } = req.body;
@@ -13,6 +14,8 @@ const register = async (req, res) => {
       .status(400)
       .json({ message: "User already exists with this email" });
   }
+
+  // Hash Password
 };
 
 export { register };
