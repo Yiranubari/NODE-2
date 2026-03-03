@@ -7,12 +7,14 @@ const creatorId = "3980f8e9-68c6-468b-bb04-268a223b5ba2";
 const movies = [
   {
     title: "Inception",
-    description:
+    overview:
       "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
-    releaseDate: new Date("2010-07-16"),
-    genre: "Sci-Fi",
-    rating: 8.8,
-    creatorId: creatorId,
+    releaseYear: new Date("2010-07-16"),
+    genres: "Sci-Fi",
+    runtime: 148,
+    posterUrl:
+      "https://image.tmdb.org/t/p/w500/qmDpIHrmpJINaRKAfWQfftjCdyi.jpg",
+    createdBy: userId,
   },
   {
     title: "The Matrix",
