@@ -1,38 +1,6 @@
-import pkg from "@prisma/client";
-import { PrismaPg } from "@prisma/adapter-pg";
-import pg from "pg";
-
-const { PrismaClient, Prisma } = pkg;
-const { Pool } = pg;
-
-const createPoolFromEnv = () => {
-  if (!process.env.DATABASE_URL) {
-    throw new Error("DATABASE_URL is not set");
-  }
-
-  const url = new URL(process.env.DATABASE_URL);
-
-  return new Pool({
-    user: url.username,
-    password: url.password,
-    host: url.hostname,
-    port: url.port ? Number(url.port) : 5432,
-    database: url.pathname.startsWith("/")
-      ? url.pathname.slice(1)
-      : url.pathname,
-    ssl:
-      url.searchParams.get("sslmode") === "require"
-        ? { rejectUnauthorized: false }
-        : undefined,
-  });
-};
-
-const pool = createPoolFromEnv();
-
-const adapter = new PrismaPg(pool);
+import { PrismaClient, Prisma } from "@prisma/client";
 
 const prisma = new PrismaClient({
-  adapter,
   log:
     process.env.NODE_ENV === "development"
       ? ["query", "error", "warn"]
