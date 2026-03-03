@@ -30,4 +30,4 @@ const disconnectDB = async () => {
   console.log("Disconnected from database");
 };
 
-export { Prisma, connectDB, disconnectDB };
+export { Prisma, connectDB, disconnectDB, prisma };
