@@ -97,3 +97,25 @@ const movies = [
     createdBy: userId,
   },
 ];
+
+const main = async () => {
+  console.log("Seeding database with movies...");
+
+  for (const movie of movies) {
+    await prisma.movie.create({
+      data: movie,
+    });
+    console.log(`Inserted movie: ${movie.title}`);
+  }
+
+  console.log("Seeding completed.");
+};
+
+main()
+  .catch((err) => {
+    console.error(err);
+    process.exit(1);
+  })
+  .finally(async () => {
+    await prisma.$disconnect();
+  });
