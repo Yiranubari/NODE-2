@@ -1,4 +1,4 @@
-import { PrismaClient } from "@prisma/client";
+import { prisma } from "../config/db.js";
 import bcrypt from "bcryptjs";
 const register = async (req, res) => {
   const body = req.body;
