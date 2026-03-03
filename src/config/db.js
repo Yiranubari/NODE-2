@@ -1,7 +1,8 @@
-import { prismaClient } from "@prisma/client";
-import { Prisma } from "@prisma/client/extension";
+import pkg from "@prisma/client";
 
-const prisma = new prismaClient({
+const { PrismaClient, Prisma } = pkg;
+
+const prisma = new PrismaClient({
   log:
     process.env.NODE_ENV === "development"
       ? ["query", "error", "warn"]
