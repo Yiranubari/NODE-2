@@ -25,4 +25,14 @@ const addToWatchlist = async (req, res) => {
   if (!existingInWatchlist) {
     return res.status(400).json({ error: "Movie already in watchlist" });
   }
+
+  const watchlistItem = await prisma.watchlistItem.create({
+    data: {
+      userId,
+      movieId,
+      status: status || "PLANNED",
+      rating,
+      notes,
+    },
+  });
 };
