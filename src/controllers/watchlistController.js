@@ -42,3 +42,5 @@ const addToWatchlist = async (req, res) => {
     },
   });
 };
+
+export { addToWatchlist };
