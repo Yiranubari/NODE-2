@@ -21,4 +21,8 @@ const addToWatchlist = async (req, res) => {
       },
     },
   });
+
+  if (!existingInWatchlist) {
+    return res.status(400).json({ error: "Movie already in watchlist" });
+  }
 };
