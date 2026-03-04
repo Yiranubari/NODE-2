@@ -28,7 +28,7 @@ const addToWatchlist = async (req, res) => {
 
   const watchlistItem = await prisma.watchlistItem.create({
     data: {
-      userId,
+      userId: req.user.id,
       movieId,
       status: status || "PLANNED",
       rating,

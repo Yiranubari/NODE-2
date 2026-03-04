@@ -32,5 +32,8 @@ export const authMiddleware = async (req, res, next) => {
         .json({ message: "Not authorized, user not found" });
     }
     req.user = user;
-  } catch (err) {}
+    next();
+  } catch (err) {
+    return res.status(401).json({ message: "Not authorized, invalid token" });
+  }
 };
