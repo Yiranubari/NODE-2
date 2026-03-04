@@ -35,4 +35,10 @@ const addToWatchlist = async (req, res) => {
       notes,
     },
   });
+  res.status(201).json({
+    status: "success",
+    data: {
+      watchlistItem,
+    },
+  });
 };

@@ -1,10 +1,10 @@
 import express from "express";
-import { register, login, logout } from "../controllers/authController.js";
+import { addToWatchlist } from "../controllers/watchlistController.js";
 
 const router = express.Router();
 
-router.post("/", add);
-router.post("/login", login);
-router.post("/logout", logout);
+router.post("/", addToWatchlist);
+// router.post("/login", login);
+// router.post("/logout", logout);
 
 export default router;
