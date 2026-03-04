@@ -14,6 +14,11 @@ const addToWatchlist = async (req, res) => {
 
   // Check if already in watchlist
   const existingInWatchlist = await prisma.watchlistItem.findUnique({
-    where: { id: movieId },
+    where: {
+      userId_movieId: {
+        userId,
+        movieId,
+      },
+    },
   });
 };
